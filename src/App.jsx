@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shuffle, Pencil, Edit3 } from "lucide-react";
 
@@ -68,7 +68,8 @@ export default function App() {
 
   return (
     <div className="min-h-dvh w-full bg-gradient-to-b from-zinc-50 to-zinc-100 text-zinc-900">
-      <div className="mx-auto max-w-md px-4 pt-5 pb-24">
+      {/* ⬇️ 가운데 고정폭 제거: 모바일에서 가로 전체 사용 */}
+      <div className="w-full px-4 pt-5 pb-24">
         <Header />
         {mode === "input" && (
           <section className="mt-6 space-y-4">
@@ -102,7 +103,8 @@ export default function App() {
 
         {mode === "draw" && (
           <section className="mt-8 flex flex-col items-center">
-            <div className="relative w-full max-w-[22rem] aspect-[3/4]">
+            {/* ⬇️ 모바일 100% / sm 이상에서만 22rem 제한 */}
+            <div className="relative w-full sm:max-w-[22rem] aspect-[3/4]">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="absolute w-[86%] h-[88%] bg-white/70 border border-zinc-200 rounded-3xl shadow-md rotate-[-4deg] translate-x-[-6px]" />
                 <div className="absolute w-[86%] h-[88%] bg-white/80 border border-zinc-200 rounded-3xl shadow-md rotate-[6deg] translate-x-[8px] translate-y-[6px]" />
