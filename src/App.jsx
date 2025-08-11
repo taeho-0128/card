@@ -68,7 +68,7 @@ export default function App() {
 
   return (
     <div className="min-h-dvh w-full bg-gradient-to-b from-zinc-50 to-zinc-100 text-zinc-900">
-      {/* ⬇️ 가운데 고정폭 제거: 모바일에서 가로 전체 사용 */}
+      {/* 모바일에서 가로 전체 사용 (max-w 제거) */}
       <div className="w-full px-4 pt-5 pb-24">
         <Header />
         {mode === "input" && (
@@ -103,7 +103,7 @@ export default function App() {
 
         {mode === "draw" && (
           <section className="mt-8 flex flex-col items-center">
-            {/* ⬇️ 모바일 100% / sm 이상에서만 22rem 제한 */}
+            {/* 모바일 100% / sm 이상에서만 22rem 제한 */}
             <div className="relative w-full sm:max-w-[22rem] aspect-[3/4]">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="absolute w-[86%] h-[88%] bg-white/70 border border-zinc-200 rounded-3xl shadow-md rotate-[-4deg] translate-x-[-6px]" />
